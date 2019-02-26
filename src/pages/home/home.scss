@@ -1,0 +1,32 @@
+page-home {
+
+}
+
+.slide-reduce {
+    height: 70%;
+    }
+
+.card-background-page {
+
+  ion-card {
+    border-top:solid #555759 1px;
+    border-bottom:solid  #555759 4px;
+  }
+
+  .card-title {
+    background-color: #ccced1;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    
+  }
+
+  .card-subtitle {
+    font-size: 1.0em;
+    position: absolute;
+    top: 52%;
+    width: 100%;
+    color: #fff;
+  }
+
+}    

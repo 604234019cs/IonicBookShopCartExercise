@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar >
+    <ion-title>
+      ComSci Book Shop
+    </ion-title>
+    <ion-buttons large end >
+        <button ion-button style=" font-size: 25px;" (click)="showCart()"><ion-icon name="cart" ></ion-icon>
+            &nbsp;<ion-badge>{{numItem}}</ion-badge>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding >
+
+      <div style="text-align: center">
+        <br/>
+        <br/>
+        <img  src="../../assets/imgs/bookshop_small.jpg" />
+        <br/>
+        <br/>
+      </div>
+      <ion-grid style="padding:0%;width: 100%" class="card-background-page" >
+
+          <ion-row >
+            <ion-col col-12 >     
+                <ion-card (click)="goToPageTopSell()" > 
+                    <img src="../../assets/imgs/Tosellers_small.png"/>
+                    
+                      <ion-card-title  >
+                        <div style="text-align: center">
+                            <b>Top Sellers</b>
+                        </div>
+                        
+                      </ion-card-title>
+                    
+                    
+                  </ion-card>
+              
+
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12>
+                <ion-card (click)="goToPageCategory()" >
+                    <img src="../../assets/imgs/category_small.jpg"/>
+                    
+                      <ion-card-title>
+                          <div style="text-align: center">
+                            <b>Book Category</b>
+                          </div>
+                        
+                      </ion-card-title>
+                    
+                    
+                  </ion-card>
+              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      
+          
+
+            
+      
+      
+</ion-content>

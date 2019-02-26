@@ -1,0 +1,95 @@
+<!--
+  Generated template for the CartPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-grid *ngIf="books">
+      <ion-row >
+        <ion-col col-6>
+            <b>Title</b>  
+        </ion-col>
+        <ion-col style="text-align:center">
+            <b>Price</b>
+        </ion-col>
+        <ion-col style="text-align:center">
+            <b>Qualtity</b>
+        </ion-col>
+        <ion-col style="text-align:center">
+          <b>Total</b>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let book of books">
+          <ion-col col-6>
+              {{book.title}}
+          </ion-col>
+          <ion-col style="text-align:center">
+              {{book.price}}
+          </ion-col>
+          <ion-col style="text-align:center">
+              {{book.quatity}}
+          </ion-col>
+          <ion-col style="text-align:center">
+              {{book.quatity*book.price}}
+          </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col col-10 style="text-align:right">
+              <b>Total:</b>  
+          </ion-col>          
+          <ion-col style="text-align:center">
+            <b>{{total}}</b>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <button ion-button full  (click)="checkOut()"  *ngIf="books">Check Out</button>
+    <div *ngIf="books === null" style="color:red;text-align: center">
+      <br/>
+      <br/>
+      <br/>
+      <b>No item in cart</b>  
+      <br/>
+      <br/>
+      <br/>
+      
+    </div>
+    
+    <div *ngIf="checkout" >
+      <form (ngSubmit)="confirmOrder()">
+        <ion-item>
+        <ion-label>Name:</ion-label>
+        <ion-input type="text" [(ngModel)]="order.name" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label>Address:</ion-label>
+        <ion-textarea [(ngModel)]="order.address" name="address"></ion-textarea>
+        </ion-item>
+        <ion-item>
+        <ion-label>Province:</ion-label>
+        <ion-input type="text" [(ngModel)]="order.province" name="province"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label>Postal:</ion-label>
+        <ion-input type="number" [(ngModel)]="order.postal" name="postal"></ion-input>
+        </ion-item>
+        <button ion-button color="secondary" type="submit" block>Confirm Order</button>
+        </form>
+        </div>
+        
+  
+    <button ion-button full color="danger" (click)="clearCart()"  *ngIf="books && !checkout">Clear Cart</button>
+    
+    
+    <button ion-button full color=dark (click)="closeModal()">Close</button>
+
+</ion-content>
