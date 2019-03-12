@@ -6,7 +6,7 @@ import { Book } from '../../../models/book.model';
 @Injectable()
 export class BookRestProvider {
   
-  private url="https://comsci-bookshop.herokuapp.com/";
+  private url="http://localhost:3000";
  
      
   constructor(public http: HttpClient) {    

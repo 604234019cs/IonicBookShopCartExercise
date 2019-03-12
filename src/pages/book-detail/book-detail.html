@@ -17,7 +17,6 @@
 
 </ion-header>
 
-
 <ion-content padding>
     <ion-grid style="height: 100%" *ngIf="book">
         <ion-row justify-content-center align-items-center style="height: 100%">
@@ -49,10 +48,10 @@
                       <strong>Description:</strong>  {{book.shortDescription}}      
                 </ion-item>      
               </ion-list>
-              <button ion-button full  color="danger" (click)="BookAdd(book.bookid,book.title,book.price)">
-                  <ion-icon name="cart"     ></ion-icon>&nbsp;
-                  Add to Cart   
-              </button>
+              <button ion-button full color="danger" (click)="BookAdd(book.bookid,book.title,book.price)">
+                <ion-icon name="cart"></ion-icon>&nbsp;
+                Add to Cart
+                </button>
               <button ion-button full color="dark" (click)="goBack()">
                 Back
               </button>

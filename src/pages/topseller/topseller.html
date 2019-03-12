@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="background-color:slategrey;">
     <ion-list *ngIf="books">
         <ion-item *ngFor="let book of books"  text-wrap>
           <ion-thumbnail item-start>
@@ -24,8 +24,8 @@
           <button ion-button   (click)="ShowDetail(book.bookid)">            
             <ion-icon name="md-list-box"     ></ion-icon>&nbsp;            
           </button>
-          <button ion-button  color="danger" (click)="BookAdd(book.bookid,book.title,book.price)">
-            <ion-icon name="cart"     ></ion-icon>&nbsp;
+          <button ion-button  color="danger" (click)="BookAdd(book.bookid,book.title,book.price)" >
+            <ion-icon name="cart"></ion-icon>&nbsp;
             Add to Cart   
           </button>
          
